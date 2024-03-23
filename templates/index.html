@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmFlix</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="static/styles.css">
+
+</head>
+
+<body class="bg-black text-white">
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-links">
+            <div class="logo">
+                <a href="/" class="brand">
+                    <h1>Film<span class="bold">Flix</span></h1>
+                </a>
+            </div>
+            <div class="nav-items">
+                <a href="/films" class="mr-4 font-light">Search Films</a>
+                <a href="/films#allFilms" class="mr-4 font-light">All Films</a>
+                <a href="/admin" class="mr-4 font-light">Admin</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto py-10 text-center">
+        <h1 class="text-4xl font-light mb-6 text-white">Welcome to <span class="red">Film</span><span
+                class="bold red">Flix</span></h1>
+        <hr>
+        <div class="searchbox">
+            <p class="text-lg mb-4">Use the filters below to search for films:</p>
+            <form action="/films" method="GET" class="grid grid-cols-2 gap-4">
+                <div class="flex items-center">
+                    <label for="title" class="sr-only">Title</label>
+                    <input type="text" name="title" id="title" placeholder="Title"
+                        class="border border-gray-500 rounded px-3 py-2 w-full">
+                </div>
+                <div class="flex items-center">
+                    <label for="genre" class="sr-only">Genre</label>
+                    <input type="text" name="genre" id="genre" placeholder="Genre"
+                        class="border border-gray-500 rounded px-3 py-2 w-full">
+                </div>
+                <div class="flex items-center">
+                    <label for="yearReleased" class="sr-only">Year Released</label>
+                    <input type="number" name="yearReleased" id="yearReleased" placeholder="Year Released"
+                        class="border border-gray-500 rounded px-3 py-2 w-full">
+                </div>
+                <div class="flex items-center">
+                    <label for="rating" class="sr-only">Rating</label>
+                    <input type="text" name="rating" id="rating" placeholder="Rating"
+                        class="border border-gray-500 rounded px-3 py-2 w-full">
+                </div>
+                <button type="submit" class="col-span-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                    id="activateSearchButton">Search</button>
+            </form>
+        </div>
+
+        <div id="searchResultsContainer">
+            <h2 class="text-white ">
+                {% if num_films_found %}
+                <p><strong><a href="#allFilms">{{ num_films_found }} films found</a></strong></p>
+                {% else %}
+                <p>No films found</p>
+                {% endif %}
+        </div>
+
+
+        <!-- Main content area -->
+        <div class="max-w-screen-xl mx-auto" id="allFilms"><br>
+            <h2 class="text-2xl font-light mb-4 red">All <span class="bold">Films</span></h2>
+            <hr>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {% for film in films %}
+                <div class="film-card bg-gray-800 rounded-lg shadow-md">
+                    <img src="{{ film.poster }}" alt="{{ film.title }}" class="h-64 object-cover rounded-t-lg">
+                    <div class="film-details p-4">
+                        <h2 class="film-title text-white text-xl font-semibold mb-2">{{ film.title }} ({{
+                            film.yearReleased }})</h2>
+                        <p class="film-info text-gray-400">Rating: {{ film.rating }}</p>
+                        <p class="film-info text-gray-400">Duration: {{ film.duration }} minutes</p>
+                        <p class="film-info text-gray-400">Genre: {{ film.genre }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer class="max-w-screen-xl mx-auto">
+        <div class="container mx-auto flex justify-between items-center text-sm text-white">
+            <div>
+                <p>© 2024 FilmFlix. All rights reserved. This is a mock site.</p>
+            </div>
+            <div>
+                <p>Website designed by <a href="https://saslam1023.github.io" target="_blank"
+                        class="text-gray-200 hover:text-white">saslam1023</a></p>
+            </div>
+            <div><a href="https://saslam1023.github.io" target="_blank" class="text-gray-200 hover:text-white">Visit
+                    Pixel Perfect</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

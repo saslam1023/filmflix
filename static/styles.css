@@ -1,0 +1,517 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;400;700&display=swap');
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: #e50914;
+    padding: 20px 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-form input[type="text"],
+.search-form input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #ff0a16;
+}
+
+/* Film Cards */
+.film-card {
+    background-color: #1f2937;
+    color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    max-width: 300px;
+    text-align: left;
+
+}
+
+.film-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.film-card p {
+    text-align: left;
+}
+
+.film-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.film-card ul li {
+    margin-bottom: 4px;
+}
+
+input {
+    color: #000;
+}
+
+
+.film-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* Footer styles */
+footer {
+    background-color: #e50914;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 30px;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+footer p {
+    font-size: 11px;
+}
+
+.text-gray-200 {
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+.brand h1 {
+    font-size: 60px;
+    font-weight: 200;
+    margin-top: 0px;
+
+}
+
+h1,
+h2 {
+    margin-top: 30px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.red {
+    color: #e50914;
+}
+
+/* Search */
+
+.searchbox {
+    background-color: #1f2937;
+    color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+
+.addfilmbox {
+    background-color: #1f2937;
+    color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    width: 60%;
+}
+
+
+hr {
+    border: none;
+    /* Remove default border */
+    background-color: #e50914;
+    /* Set background color to fill the line */
+    height: 1px;
+    /* Specify the height of the line */
+    margin: 20px 0;
+    /* Adjust margin for spacing */
+    border-radius: 2px;
+    /* Optional: Add border-radius for rounded corners */
+}
+
+#searchfilms {
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 0px;
+    color: #000;
+
+}
+
+/* Flash message styling */
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    z-index: 1000;
+    color: yellow;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+/* User Panel */
+.user-panel {
+    display: flex;
+    justify-content: space-between;
+    /* Adjust alignment as needed */
+    align-items: end;
+    /* Adjust alignment as needed */
+    padding: 10px 50px;
+    font-size: smaller;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+
+
+
+.error-code {
+    font-size: 5rem;
+}
+
+.error-message {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+#deleteModal {
+    display: none;
+}
+
+
+
+#filmtable input[type="text"],
+#filmtable input[type="number"] {
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: #fff;
+    width: auto;
+    text-align: left;
+}
+
+
+
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+th,
+td {
+    padding: 4px;
+    text-align: left;
+    max-width: 200px;
+    /* Limiting the maximum width of td */
+    word-wrap: break-word;
+    white-space: normal;
+    border-bottom: 1px solid #1f2937;
+
+}
+
+th {
+    background-color: #1f2937;
+}
+
+
+#add-film {
+    width: 100%;
+    margin: 20px auto;
+}
+
+#add-film input[type="text"],
+#add-film input[type="number"] {
+    max-width: 100%;
+    width: 100%;
+    padding: 8px;
+}
+
+.searchbox {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.searchbox input[type="text"],
+.searchbox input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.small {
+    font-size: 13px;
+}
+
+.rating,
+.duration,
+.year {
+    max-width: 80px;
+}
+
+.poster,
+.title,
+.genre {
+    max-width: 100px;
+}
+
+.title {
+    width: 100px;
+    max-width: 200px;
+    background-color: #666;
+
+}
+
+.head {
+    background-color: #000;
+    color: #fff;
+    padding: 5rem 3rem 1rem 3rem;
+    margin-bottom: 5rem;
+}
+
+.btn-primary {
+    background-color: #e50914;
+    border-color: #e50914;
+}
+
+.btn-primary:hover {
+    background-color: #ff0a16;
+    border-color: #ff0a16;
+}
+
+.form-control {
+    border-color: #e50914;
+}
+
+.form-control:focus {
+    border-color: #ff0a16;
+    box-shadow: 0 0 0 0.25rem rgba(239, 68, 68, 0.25);
+    background-color: transparent;
+}
+
+.field {
+    border: 0;
+    background-color: transparent;
+}
+
+.mb-3 {
+    background-color: transparent;
+    width: 100%;
+}
+
+.update {
+    background-color: #ff7f0e;
+    color: #fff;
+}
+
+.active {
+    background-color: #e50914;
+}
+
+.active input {
+    margin-top: 15px;
+}
+
+.tableimg {
+    width: 50px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+.wrap-text {
+    white-space: normal;
+    word-wrap: break-word;
+
+}
+
+
+/* CSS for the modal */
+.modal {
+    display: none;
+    /* Hide the modal by default */
+    position: fixed;
+    /* Position the modal */
+    z-index: 1000;
+    /* Set a high z-index to ensure it appears above other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scrolling if content exceeds viewport */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background color with transparency */
+}
+
+/* Style the modal content */
+.modal-content {
+    background-color: #fefefe;
+    color: #000;
+    margin: 15% auto;
+    /* Center modal vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    /* Set the width of the modal */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    animation: zoom 0.6s;
+    /* Add animation */
+    text-align: center;
+    border-radius: 8px;
+}
+
+.modal-header {
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add animation (fade in the modal) */
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+#searchResultsContainer {
+    display: block;
+}

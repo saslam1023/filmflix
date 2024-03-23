@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmFlix - Films</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-black text-white">
+    <div class="container mx-auto py-10 text-center">
+        <h1 class="text-4xl font-bold mb-6">Films</h1>
+
+        <div class="my-8">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {% for film in films %}
+                <li class="bg-gray-800 rounded-lg shadow-md">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold">{{ film.title }} ({{ film.yearReleased }})</h2>
+                        <ul class="text-sm mt-4">
+                            <li>Poster: {{ film.poster }}</li>
+                            <li>Rating: {{ film.rating }}</li>
+                            <li>Duration: {{ film.duration }} minutes</li>
+                            <li>Genre: {{ film.genre }}</li>
+                        </ul>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
