@@ -21,6 +21,10 @@ import random
 import string
 import secrets
 from datetime import timedelta
+import logging
+from logging.handlers import RotatingFileHandler
+
+
 
 
 # Load environment variables from .env file
@@ -31,6 +35,12 @@ load_dotenv()
 def create_app():
     # Initialize Flask app
     app = Flask(__name__, template_folder='templates')
+    
+
+    # Configure logging
+    handler = RotatingFileHandler('app.log', maxBytes=10000, backupCount=1)
+    handler.setLevel(logging.INFO)
+    app.logger.addHandler(handler)
 
     # Configure Flask-Mail
     app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
@@ -494,4 +504,4 @@ def create_app():
 # Run the app if executed directly
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True)
+    app.run(debug=False)
