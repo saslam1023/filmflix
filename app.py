@@ -470,18 +470,18 @@ def create_app():
     # Email
     # Send verification email function
     def send_verification_email(email, verification_code):
-        msg = Message('Verify Your Email', recipients=[email])
-        msg.body = f'Click the following link to verify your email: {url_for("verify_email", email=email, verification_code=verification_code, _external=True)}'
+        msg = Message('FilmFlix Verify Your Email', recipients=[email])
+        msg.body = f'FilmFlix\nClick the following link to verify your email: {url_for("verify_email", email=email, verification_code=verification_code, _external=True)}\n\nHave a great day!\nFilmFlix Team'
         mail.send(msg)
 
     # Email reset
     def send_reset_password_email(user_email, reset_token):
         # Compose the email message
-        subject = "Password Reset Request"
+        subject = "FilmFlix Password Reset Request"
         sender = "FilmFlix"
         recipient = user_email
         reset_link = url_for('reset_password', token=reset_token, _external=True)  # Assuming route name is reset_password
-        body = f"You have requested to reset your password. Please click on the following link to reset your password:\n\n{reset_link}\n\nIf you did not request this change, please ignore this email.\n\nHave a great day!\nFilmFlix Team"
+        body = f"FilmFlix\nYou, or someone else, have requested to reset your password. Please click on the following link to reset your password:\n\n{reset_link}\n\nIf you did not request this change, please ignore this email.\n\nHave a great day!\nFilmFlix Team"
 
         # Send the email
         msg = Message(subject, sender=sender, recipients=[recipient])
