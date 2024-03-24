@@ -515,3 +515,91 @@ th {
 #searchResultsContainer {
     display: block;
 }
+
+
+/* Mobile */
+@media (max-width: 600px) {
+    .nav-bar {
+        margin: 0;
+        padding: 5px 0;
+    }
+
+    .nav-links {
+        padding: 0;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .nav-items,
+    .nav-items a {
+        font-size: 10px;
+    }
+
+    .brand h1 {
+        font-size: 30px;
+        padding-left: 20px;
+    }
+
+    td,
+    td>input {
+        padding: 0px;
+        text-align: left;
+        font-size: 11px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    .field,
+    .form-control,
+    .genre,
+    .rating,
+    .duration {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 0px;
+        color: #000;
+        padding: 0;
+
+    }
+
+    .searchbox {
+        width: 100%;
+    }
+
+    .container,
+    .film-card {
+        margin: 0 auto;
+
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .logo,
+    .text-3xl {
+        width: auto;
+        font-size: 30px;
+        padding: 5px 20px;
+        margin: 0;
+    }
+
+    .text-1xl {
+        font-size: 10px;
+        margin-top: 2px;
+        padding: 0 20px;
+    }
+
+    #addfilm.addfilmbox {
+
+        width: 70%;
+    }
+
+
+}
