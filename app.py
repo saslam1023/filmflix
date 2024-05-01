@@ -175,7 +175,7 @@ def create_app():
                 password_resets.insert_one({'email': email, 'token': token, 'timestamp': datetime.datetime.now()})
                 reset_link = url_for('reset_password', token=token, _external=True)
                 msg = Message('FilmFlix Password Reset', recipients=[email])
-                msg.body = f'Click the following link to reset your password: {reset_link}'
+                msg.body = f'FilmFlix\nYou, or someone else, have requested to reset your password. Please click on the following link to reset your password:\n\n{reset_link}\n\nIf you did not request this change, please ignore this email.\n\nHave a great day!\nFilmFlix Team'
                 mail.send(msg)
                 flash('An email has been sent with instructions to reset your password.')
                 return redirect(url_for('login'))
@@ -226,8 +226,7 @@ def create_app():
     # Main site get films. Search.
     @app.route('/')
     def index():
-        films = list(film_collection.find())
-        return render_template('index.html', films=films)
+        return render_template('index.html')
 
     @app.route('/films', methods=['GET'])
     def get_films():
@@ -246,7 +245,7 @@ def create_app():
             query['rating'] = {"$regex": rating, "$options": "i"}
         films = list(film_collection.find(query))
         num_films_found = len(films)
-        return render_template('index.html', films=films, num_films_found=num_films_found)
+        return render_template('films.html', films=films, num_films_found=num_films_found)
 
     # Admin area, CRUD.
     @app.route('/admin')
@@ -348,7 +347,7 @@ def create_app():
 
     # Email
     def send_verification_email(email, verification_code):
-        subject = "1 FilmFlix Verify Your Email"
+        subject = "FilmFlix Verify Your Email"
         sender = "saslam1023@icloud.com"
         recipient = email
     # msg = Message('FilmFlix Verify Your Email', recipients=[email])
@@ -358,7 +357,7 @@ def create_app():
         mail.send(msg)
 
     def send_reset_password_email(user_email, reset_token):
-        subject = "2 FilmFlix Password Reset Request"
+        subject = "FilmFlix Password Reset Request"
         sender = "saslam1023@icloud.com"
         recipient = user_email
         reset_link = url_for('reset_password', token=reset_token, _external=True)
