@@ -7,7 +7,7 @@
     <title>Film Management Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="static/styles.css" rel="stylesheet">
-    <script src="static/script.js" defer></script>
+    <script src="static/scripts.js" defer></script>
 </head>
 
 <body class="bg-black text-white">
@@ -84,7 +84,11 @@
                 <input type="number" class="form-input" name="yearReleased" placeholder="Year Released" required>
                 <input type="text" class="form-input" name="rating" placeholder="Rating" required>
                 <input type="number" class="form-input" name="duration" placeholder="Duration" required>
-                <input type="text" class="form-input" name="poster" placeholder="Poster" required>
+
+                <input type="text" class="form-input" name="poster"
+                    value="https://placehold.co/240x320/222222/888888?text=Preview%20unavailable" placeholder="Poster"
+                    readonly><small>Poster image has been disabled and a placeholder will be inserted
+                    automatically.</small>
                 {% else %}
                 <input type="text" class="form-input" name="title" placeholder="Title" disabled>
                 <input type="text" class="form-input" name="genre" placeholder="Genre" disabled>
@@ -96,9 +100,8 @@
                 <div></div>{% if session['email'] %}
                 <button type="submit" class="bg-red-600 text-white px-4 py-2 mt-4 rounded hover:bg-red-500 mb-4">Add
                     Film</button>{% else %}
-                <button type="button" class="mr-4 font-light px-4 py-2 mt-4 rounded bg-red-500" disabled><a
-                        href="/login">Login</a> to
-                    Add Film</button>
+                <a href="/login"><button type="button" class="mr-4 font-light px-4 py-2 mt-4 rounded bg-red-500">Login
+                        to Add Film</button></a>
                 {% endif %}
             </form>
         </section>
@@ -195,9 +198,9 @@
                                     class="bg-red-600 text-white px-4 py-2 mt-4 rounded hover:bg-red-500 hide"
                                     id="{{ film._id }}_update">Update</button>
                                 {% else %}
-                                <button class="mr-4 font-light px-4 py-2 mt-4 rounded bg-red-500" disabled><a
-                                        href="/login">Login</a> to
-                                    Update</button>
+                                <a href="/login"><button class="mr-4 font-light px-4 py-2 mt-4 rounded bg-red-500">Login
+                                        to
+                                        Update</button></a>
                                 {% endif %}
                                 </form>
                             </div>
@@ -207,9 +210,9 @@
                                 <button id="{{ film._id }}_modify"
                                     class="bg-gray-600 text-white px-4 py-2 mt-4 rounded hover:bg-gray-500"
                                     onclick="toggleEdit('{{ film._id }}')">Modify</button>{% else %}
-                                <button class="mr-4 font-light px-4 py-2 mt-4 rounded bg-red-500" disabled><a
-                                        href="/login">Login</a> to
-                                    Modify</button>
+                                <a href="/login"><button class="mr-4 font-light px-4 py-2 mt-4 rounded bg-red-500">Login
+                                        to
+                                        Modify</button></a>
                                 {% endif %}
                             </div>
                         </td>
@@ -224,9 +227,9 @@
                                     <!-- Hidden input to indicate the type of deletion -->
                                     <input type="hidden" name="deleteType" value="single">
                                     {% else %}
-                                    <button class="mr-4 px-4 py-2 mt-4 font-light rounded bg-red-500" disabled><a
-                                            href="/login">Login</a> to
-                                        Delete</button>
+                                    <a href="/login"><button
+                                            class="mr-4 px-4 py-2 mt-4 font-light rounded bg-red-500">Login to
+                                            Delete</button></a>
                                     {% endif %}
                                 </form>
                             </div>
