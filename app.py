@@ -226,7 +226,8 @@ def create_app():
     # Main site get films. Search.
     @app.route('/')
     def index():
-        return render_template('index.html')
+        films = list(film_collection.find())
+        return render_template('index.html', films=films)
 
     @app.route('/films', methods=['GET'])
     def get_films():
